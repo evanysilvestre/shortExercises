@@ -17,7 +17,7 @@ class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title: " + title + ", author:" + author + ", isnb:" + isnb + "]";
+		return "Book [title: " + title + ", author: " + author + ", isnb: " + isnb + "]";
 	}
 
 }
@@ -29,6 +29,7 @@ public class Exercise1 {
 		Book book = new Book(title, author, isnb);
 		books.add(book);
 		System.out.println("Your book was added!");
+		System.out.println(books);
 	}
 	
 	static void removeBookByTitle(String title) {
@@ -43,8 +44,50 @@ public class Exercise1 {
 		}
 	}
 	
+	public static String askTitle() {
+		System.out.println("Enter the title: ");
+		String title = scn.nextLine();
+		return title;
+	}
+	public static String askAuthor() {
+		System.out.println("Enter the Author: ");
+		String author = scn.nextLine();
+		return author;
+	}
+	public static String askIsnb() {
+		System.out.println("Enter the ISNB: ");
+		String isnb = scn.nextLine();
+		return isnb;
+	}
+	
 	public static void main(String[] args) {
+		int choose;
+		boolean option = false;
 		
+		System.out.println("Book Store! ");
+		do {
+			System.out.println("Choose and option: ");
+			System.out.println("1. Add a book ");
+			System.out.println("2. Remove a book by title");
+			choose = scn.nextInt();
+			scn.nextLine();
+			
+			if (choose == 1) {
+				option = false;
+				String titleAnswer = askTitle();
+				String authorAnswer = askAuthor();
+				String isnbAnswer = askIsnb();
+				addBook(titleAnswer, authorAnswer, isnbAnswer);
+				
+			} else if (choose == 2){
+				option = false;
+				
+			} else {
+				option = true;
+				System.out.println("Invalid Option! Try again");
+			}
+			
+		} while (option);
 	}
 
 }
