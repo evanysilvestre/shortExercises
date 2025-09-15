@@ -45,19 +45,34 @@ public class Exercise1 {
 	}
 	
 	public static String askTitle() {
-		System.out.println("Enter the title: ");
-		String title = scn.nextLine();
-		return title;
+		try {
+			System.out.println("Enter the title: ");
+			String title = scn.nextLine();
+			return title;
+		} catch (Exception e ) {
+			return "Something went wrong!";
+		}
+		
 	}
 	public static String askAuthor() {
-		System.out.println("Enter the Author: ");
-		String author = scn.nextLine();
-		return author;
+		try {
+			System.out.println("Enter the Author: ");
+			String author = scn.nextLine();
+			return author;
+		} catch (Exception e) {
+			return "Something went wrong!";
+		}
+		
 	}
 	public static String askIsnb() {
-		System.out.println("Enter the ISNB: ");
-		String isnb = scn.nextLine();
-		return isnb;
+		try {
+			System.out.println("Enter the ISNB: ");
+			String isnb = scn.nextLine();
+			return isnb;
+		} catch (Exception e) {
+			return "Something went wrong!";
+		}
+		
 	}
 	
 	public static void main(String[] args) {
